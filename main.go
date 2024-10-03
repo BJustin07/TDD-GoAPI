@@ -2,14 +2,12 @@ package main
 
 import (
 	"TDD-GoAPI/config"
-	"log"
 )
 
 func main() {
 	config.LoadEnv()
-	err := config.ConnectToDatabase()
+	err := config.StartServer()
 	if err != nil {
-		log.Fatal(err)
+		return
 	}
-
 }
